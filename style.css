@@ -34,7 +34,7 @@ body {
   transition: top 0.3s ease-in-out; /* Smooth transition effect */
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   /* Add any additional styles for small screens here if needed */
   .navbar-nav.show + .content-wrapper {
     top: 0px; /* Move the entire content down when the menu is open */
@@ -58,7 +58,7 @@ body {
 }
 
 /* Hide navbar links below 380px */
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .nav-pills {
     display: none;
   }
@@ -69,7 +69,7 @@ body {
 }
 
 /* Show navbar links when .show class is added */
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .nav-pills.show {
     display: flex;
     flex-direction: column;
@@ -122,7 +122,7 @@ body {
 
 
 /* Media query for screens below 380px */
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   body {
     background-image: url('./images/home-bg-mob.jpg');
     background-size: contain;
@@ -160,7 +160,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .greet {
     font-size: 45px!important;
   }
@@ -230,7 +230,7 @@ h3 {
 }
 
 /* Media query for screens below 380px */
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .row-cols-1 {
       row-gap: 1rem; /* Adjust gap between rows if needed */
   }
@@ -276,7 +276,7 @@ p.lead {
 }
 
 /* Media query for screens below 380px */
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .text-body-emphasis {
       font-size: 1.5rem; /* Reduce font size for heading */
   }
