@@ -1,0 +1,297 @@
+/* General styles for the navigation links */
+/* Base styles for larger screens */
+* {
+  font-family: "Poppins", sans-serif;
+  font: solid #222831 ;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background-image: url('./images/home-bg.jpg');
+  background-size: contain;
+  background-position: start;
+  background-repeat: no-repeat;
+  padding-top: 70px;
+  position: relative;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the navbar stays on top */
+}
+
+/* Ensure the entire content wrapper is positioned relative to the top */
+.content-wrapper {
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+@media (max-width: 380px) {
+  /* Add any additional styles for small screens here if needed */
+  .navbar-nav.show + .content-wrapper {
+    top: 0px; /* Move the entire content down when the menu is open */
+  }
+}
+
+
+/* Default styles */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  color: #222831; /* Color of the hamburger icon */
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+/* Hide navbar links below 380px */
+@media (max-width: 380px) {
+  .nav-pills {
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+}
+
+/* Show navbar links when .show class is added */
+@media (max-width: 380px) {
+  .nav-pills.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white; /* Optional: background color for the dropdown */
+    width: 100%; /* Make it full-width */
+  }
+
+  .nav-link {
+    padding: 10px 0; /* Adjust padding for the dropdown links */
+    width: 100%; /* Full-width for dropdown items */
+    text-align: center; /* Center-align text */
+  }
+}
+
+
+.nav-link {
+  color: #222831 !important; /* Default color for nav links */
+  transition: color 0.3s ease !important; /* Smooth transition for hover effect */
+  font-weight: 500 !important;
+  background-color: transparent !important; /* Ensure the background is always transparent */
+  text-decoration: none !important; /* Remove any text decoration (like underline) */
+}
+
+/* Initial active state for the Home link */
+.nav-link[aria-current="page"] {
+  color: #179BAE !important;
+}
+
+/* Hover effect: turns the link color to light gray */
+.nav-link:hover {
+  color: lightgray !important;
+}
+
+/* Active state for any clicked nav link */
+.nav-link.active {
+  color: #179BAE !important; /* Color for the active nav link */
+  background-color: transparent !important; /* Keep the background transparent */
+}
+
+/* Ensure background remains transparent on focus or active */
+.nav-link:focus,
+.nav-link:active {
+  color: inherit !important; 
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+
+
+
+/* Media query for screens below 380px */
+@media (max-width: 380px) {
+  body {
+    background-image: url('./images/home-bg-mob.jpg');
+    background-size: contain;
+    background-position: start;
+    background-repeat: no-repeat;
+    padding-right: 0;
+  }
+  .nav-pills {
+      flex-direction: column; /* Stack the nav items vertically */
+      align-items: center; /* Center align the nav items */
+  }
+
+  .nav-link {
+      padding: 10px 0; /* Adjust padding for better spacing */
+      width: 100%; /* Make the links take up the full width */
+      text-align: center; /* Center the text */
+  }
+  
+  header.d-flex {
+      flex-direction: column; /* Stack the header items vertically */
+      align-items: center; /* Center align the header items */
+  }
+
+  .container {
+      padding: 0; /* Remove padding to make better use of space */
+  }
+}
+
+/* Homepage */
+.greet {
+  font-size: 72px;
+  font-weight: 400;
+  background-image: linear-gradient(to right, rgb(255, 234, 44), rgb(114, 223, 187) 14.25%, rgb(56, 194, 236) 28.5%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 380px) {
+  .greet {
+    font-size: 45px!important;
+  }
+
+  .user-name {
+    font-size: 45px!important;
+  }
+
+  .rounded-circle {
+    border: 10px solid white!important;
+  }
+  
+}
+
+  .user-name {
+    font-weight: 700;
+    color: #222831;
+    font-size: 52px;
+  }
+
+  .user-name span {
+    font-weight: 500;
+    color: #222831;
+  }
+
+  .lead {
+    font-weight: 400!important;
+    font-size: 24px!important;
+  }
+
+  .btn {
+    background-color: #179BAE!important;
+    color: white!important;
+  }
+
+  .rounded-circle {
+    border: 18px solid white;
+  }
+
+  .skill-bg {
+    background-color: white;
+    border-radius: 30px 30px 0 0;
+  }
+
+ /* My Skill */
+.skill-title {
+  display: flex;
+  justify-content: center;
+  font-size: 34px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.feature-icon img {
+  width: 50px; /* Adjust size if needed */
+  height: 50px; /* Ensure height matches width for consistent appearance */
+}
+
+h3 {
+  margin-top: 0.5rem; /* Adjust as needed for spacing between icon and text */
+  margin-bottom: 0;   /* Remove default margin for consistent alignment */
+}
+
+/* Media query for screens below 380px */
+@media (max-width: 380px) {
+  .row-cols-1 {
+      row-gap: 1rem; /* Adjust gap between rows if needed */
+  }
+
+  .row-cols-lg-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Create two columns */
+      grid-gap: 1rem; /* Adjust gap between columns if needed */
+  }
+
+  .feature {
+      align-items: center; /* Center align items in smaller screens */
+  }
+}
+
+
+.project-fs {
+    font-size: 34px;
+}
+
+.project-nm {
+    font-size: 20px;
+}
+
+.fw-normal {
+  font-size: 46px;
+}
+
+.corner {
+  border-radius: 20px;
+}
+
+.mail {
+  margin-left: 15px;
+}
+
+/* Contact Section */
+
+
+p.lead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Media query for screens below 380px */
+@media (max-width: 380px) {
+  .text-body-emphasis {
+      font-size: 1.5rem; /* Reduce font size for heading */
+  }
+
+  p.lead {
+      font-size: 1rem; /* Reduce font size for paragraph */
+      line-height: 1.4; /* Adjust line height for better readability */
+  }
+
+  p.lead svg {
+      width: 16px; /* Reduce the size of icons */
+      height: 16px; /* Maintain consistent icon size */
+  }
+
+  .mail, .lead a {
+      font-size: 0.9rem; /* Reduce font size for email and LinkedIn link */
+  }
+}
