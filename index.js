@@ -18,7 +18,8 @@ navLinks.forEach(function(link) {
   });
 });
 
-document.querySelector('.navbar-toggler').addEventListener('click', function() {
+// Function to toggle the menu
+function toggleMenu() {
   var nav = document.getElementById('navbarNav');
   var container = document.querySelector('.content-wrapper'); // Select the entire content wrapper
 
@@ -29,6 +30,22 @@ document.querySelector('.navbar-toggler').addEventListener('click', function() {
   } else {
     container.style.top = '0'; // Reset the entire content to the top
   }
+}
+
+// Event listener for hamburger menu toggler
+document.querySelector('.navbar-toggler').addEventListener('click', toggleMenu);
+
+// Event listener for nav links
+document.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    var nav = document.getElementById('navbarNav');
+    var container = document.querySelector('.content-wrapper');
+
+    if (nav.classList.contains('show')) {
+      toggleMenu(); // Close the menu if it's open
+    }
+  });
 });
+
 
 
